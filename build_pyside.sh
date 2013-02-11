@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "= Shiboken Android build script ="
+echo "= PySide Android build script ="
 
 # source the needed environmental variables
 source env.sh
