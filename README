@@ -1,0 +1,43 @@
+A scripts for building PySide for Android
+=========================================
+
+prepare.sh - downloads shiboken & pyside source
+env.sh - sets environmental variables for the build
+build_shiboken - erases old Shiboken & Pyside builds and re/builds Shiboken
+build_pyside - erases the old PySide build and re/builds PySide
+build_all.sh - erases all previous builds and builds Shiboken followed by PySide
+
+Prerequisites
+=============
+* Necessitas SDK
+(make sure you have the Android SDK platform 14 installed in it)
+* system-wide installed Shiboken
+* system-wide installed Python 2.7
+* Python 2.7 compiled for Android
+
+Tested prerequisites
+====================
+
+I've successfully built this on:
+* 64-bit Ubuntu 12.10
+* Necessitas SDK with Qt 4.8.2 and the included 8b1 Android NDK
+
+What to run
+===========
+First create some empty directory, then the prepare.sh script.
+It downloads Shiboken & PySide source code with Android modifications
+and creates all folders needed for the build.
+
+Then in env.sh fill in a correct path to the Necessitas SDK folder,
+something like: /home/user/necessitas
+
+then you are ready to run build.sh, which first builds Shiboken
+and then PySide.
+
+Of course, you can also run the build_shiboken.sh and build_pyside.sh scripts
+manually, just always make sure to run the Shiboken one first and then
+the PySide one.
+
+Results
+=======
+The resulting PySide libraries are in the stage folder. Enjoy ! :)
