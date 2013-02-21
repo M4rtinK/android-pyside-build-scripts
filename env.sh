@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NECESSITAS_DIR=/home/melf-tan/necessitas/
+export NECESSITAS_DIR="<path to the Necessitas SDK folder>"
 # The Necessitas SDK contains not only Qt libraries built for Android, but also an
 # Android NDK, that can be used to build Shiboken & PySide for Android
 export ANDROID_NDK="${NECESSITAS_DIR}/android-ndk"
