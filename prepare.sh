@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "= preparing folder for PySide for Android build ="
 echo "cloning Shiboken from Git"
-git clone git@github.com:M4rtinK/shiboken-android.git
+git clone https://github.com/M4rtinK/shiboken-android.git
 echo "switching to known-working commit"
 cd shiboken-android
 git checkout 72aeaf7d39a50ae31dd77a011e8913dce4606480
