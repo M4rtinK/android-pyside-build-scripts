@@ -3,6 +3,13 @@
 export NECESSITAS_DIR="<path to the Necessitas SDK folder>"
 # The Necessitas SDK contains not only Qt libraries built for Android, but also an
 # Android NDK, that can be used to build Shiboken & PySide for Android
+
+export BUILD_THREAD_COUNT=5
+# how many threads to use for the build
+# if you get this error:
+# "arm-linux-androideabi-g++: Internal error: Killed (program cc1plus)"
+# try to set BUILD_THREAD_COUNT to 1
+
 export ANDROID_NDK="${NECESSITAS_DIR}/android-ndk"
 export QT_DIR="${NECESSITAS_DIR}/Android/Qt/482/armeabi/"
 export ANDROID_PLATFORM_NUMBER="14"

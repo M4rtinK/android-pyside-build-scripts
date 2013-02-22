@@ -43,7 +43,7 @@ cd pyside-build
 
 read -p "* Press any key to start the PySide build *" -n1 -s
 
-make -j5
+make -j${BUILD_THREAD_COUNT}
 # build debugging:
 #make VERBOSE=1 &> ../pyside_build_verbose.txt
 

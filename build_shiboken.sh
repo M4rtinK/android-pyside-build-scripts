@@ -27,5 +27,5 @@ read -p "* Press any key to start the Shiboken build *" -n1 -s
 
 # build debugging:
 #make VERBOSE=1 &> ../shiboken_build_verbose.txt
-make -j5
+make -j${BUILD_THREAD_COUNT}
 make install
