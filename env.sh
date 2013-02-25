@@ -12,7 +12,17 @@ export BUILD_THREAD_COUNT=5
 
 export ANDROID_NDK="${NECESSITAS_DIR}/android-ndk"
 export QT_DIR="${NECESSITAS_DIR}/Android/Qt/482/armeabi/"
-export ANDROID_PLATFORM_NUMBER="14"
+
+export ANDROID_API_LEVEL="8"
+# this specifies the Android API level, 8 corresponds to Android 2.2
+# * android API levels are forward compatible
+#-> program using API level 8 will work on device running Android with API level >8
+#-> program using API level >8 will probably not work on device running Android API level <=8
+# for the mapping of Android API levels to version, see:
+# http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels
+
+export ANDROID_ARCH="arm"
+export ANDROID_PLATFORM_PATH="${ANDROID_NDK}/platforms/android-${ANDROID_API_LEVEL}/arch-${ANDROID_ARCH}"
 export BUILD_DIR=`pwd`
 
 # Path to Python compiled for Android
@@ -33,10 +43,10 @@ STL_RAW_INCLUDES="${STL_PATH}/4.4.3/include:${STL_PATH}/4.4.3/libs/armeabi/inclu
 STL_LIBS="-L${STL_PATH}/4.4.3/libs/armeabi"
 
 # make sure ctypes are included
-CTYPE_INCLUDES="-I${ANDROID_NDK}/platforms/android-${ANDROID_PLATFORM_NUMBER}/arch-arm/usr/include"
-CTYPE_INCLUDES_RAW="${ANDROID_NDK}/platforms/android-${ANDROID_PLATFORM_NUMBER}/arch-arm/usr/include"
-ANDROID_INCLUDES="${ANDROID_NDK}/platforms/android-${ANDROID_PLATFORM_NUMBER}/arch-arm/usr/include:${STL_RAW_INCLUDES}"
-ANDROID_SYSROOT="${ANDROID_NDK}/platforms/android-${ANDROID_PLATFORM_NUMBER}/arch-arm"
+CTYPE_INCLUDES="-I${ANDROID_PLATFORM_PATH}/usr/include"
+CTYPE_INCLUDES_RAW="${ANDROID_PLATFORM_PATH}/usr/include"
+ANDROID_INCLUDES="${ANDROID_PLATFORM_PATH}/usr/include:${STL_RAW_INCLUDES}"
+ANDROID_SYSROOT="${ANDROID_PLATFORM_PATH}"
 
 export MAKEFLAGS="-I${ANDROID_INCLUDES}"
 export INCLUDE=${ANDROID_INCLUDES}
