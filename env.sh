@@ -55,7 +55,6 @@ export CPLUS_INCLUDE_PATH=${ANDROID_INCLUDES}
 
 ANDROID_BIN="${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.4.3/prebuilt/linux-x86/bin/"
 
-export ANDROID_NDK=/home/melf-san/data/coding/SDK/android/necessitas/android-ndk
 export PATH="${ANDROID_BIN}:${ANDROID_NDK}:${ANDROID_NDK}/tools:$PATH"
 export PATH="${QT_DIR}/bin:$PATH"
 export ARCH="armeabi"
