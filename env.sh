@@ -64,7 +64,7 @@ export CXXFLAGS="${CTYPE_INCLUDES} ${CFLAGS} ${STL_LIBS} ${STL_INCLUDES} ${CTYPE
 
 #export LDFLAGS="--sysroot $ANDROID_NDK/platforms/android-14/arch-arm ${PYTHON_LIBZ} -Wl,-O1 -nostdlib -shared -lpython2.7 -lstdc++ -lc -lm"
 #export LDFLAGS="--sysroot $ANDROID_NDK/platforms/android-14/arch-arm ${PYTHON_LIBZ} -nostdlib -shared -lpython2.7 -lstdc++ -lc -lm"
-export LDFLAGS="--sysroot ${ANDROID_SYSROOT} ${PYTHON_LIBS} -nostdlib -shared -Wno-strict-aliasing -Wl,-O1 -Wl,-z,noexecstack -Wl,-shared,-Bsymbolic -Wl,--no-whole-archive -L${QT_DIR}/lib -lQtCore -lpython2.7 -lstdc++ -lsupc++ -lgcc -llog -lz -lm -ldl -lc"
+export LDFLAGS="--sysroot ${ANDROID_SYSROOT} ${PYTHON_LIBS} -shared -Wno-strict-aliasing -Wl,-O1 -Wl,-z,noexecstack -Wl,-shared,-Bsymbolic -Wl,--no-whole-archive -L${QT_DIR}/lib -lQtCore -lpython2.7 -lsupc++ -llog -lz -ldl -lm -lc -lstdc++ -lgcc"
 export CC="${ANDROID_BIN}/arm-linux-androideabi-gcc"
 export CXX="${ANDROID_BIN}/arm-linux-androideabi-g++"
 export AR="${ANDROID_BIN}/arm-linux-androideabi-ar"
